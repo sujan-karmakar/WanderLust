@@ -1,7 +1,5 @@
-function wrapAsync(fun) {
-    return function(req, res, next) {
-        fun(req, res, next).catch(err);
+module.exports = (fun) => {
+    return (req, res, next) => {
+        fun(req, res, next).catch(next);
     };
 }
-
-module.exports = wrapAsync;
