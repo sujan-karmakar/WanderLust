@@ -5,6 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 const port = 8080;
 
@@ -50,15 +51,14 @@ app.get("/listings/new", (req, res) => {
 });
 
 //Create route
-app.post("/listings", async (req, res) => {
-    try {
+app.post(
+    "/listings",
+    wrapAsync(async (req, res) => {
         const newListing = new Listing(req.body.listing);
         await newListing.save();
         res.redirect("/listings");
-    } catch (err) {
-        next(err);
-    }
-});
+    })
+);
 
 //Show route(Read)
 app.get("/listings/:id", async (req, res) => {
