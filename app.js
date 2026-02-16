@@ -8,6 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
+const Review = require("./models/review.js");
 
 const port = 8080;
 
@@ -117,6 +118,30 @@ app.delete(
     }),
 );
 
+
+
+
+//REVIEWS
+
+
+//Post route
+app.post("/listings/:id/reviews", wrapAsync(async (req, res) => {
+    let listing = await Listing.findById(req.params.id);
+    let newReview = new Review(req.body.review);
+
+    listing.reviews.push(newReview);
+
+    await newReview.save();
+    await listing.save();
+
+    console.log("New review saved");
+    res.redirect(`/listings/${listing._id}`);
+}));
+
+
+
+
+
 //Page not found
 app.all("/*splat", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
@@ -129,3 +154,6 @@ app.use((err, req, res, next) => {
 
     // res.status(statusCode).send(message);
 });
+
+
+
