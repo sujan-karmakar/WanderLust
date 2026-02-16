@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Review = require("./review.js");
 
 const listingSchema = new Schema({
     title: {
@@ -9,7 +10,8 @@ const listingSchema = new Schema({
     description: String,
     image: {
         type: String,
-        default : "https://images.unsplash.com/photo-1647962431451-d0fdaf1cf21c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBzdW5zZXR8ZW58MHx8MHx8fDA%3D",
+        default:
+            "https://images.unsplash.com/photo-1647962431451-d0fdaf1cf21c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBzdW5zZXR8ZW58MHx8MHx8fDA%3D",
         set: (v) =>
             v === ""
                 ? "https://images.unsplash.com/photo-1647962431451-d0fdaf1cf21c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBzdW5zZXR8ZW58MHx8MHx8fDA%3D"
@@ -21,9 +23,15 @@ const listingSchema = new Schema({
     reviews: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Review"
-        }
-    ]
+            ref: "Review",
+        },
+    ],
+});
+
+listingSchema.post("findOneAndDelete", async (listing) => {
+    if (listing) {
+        await Review.deleteMany({ _id: { $in: listing.reviews } });
+    }
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
