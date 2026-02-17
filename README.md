@@ -1,6 +1,6 @@
 # WanderLust
 
-WanderLust is a comprehensive full-stack web application designed for listing and renting vacation homes, drawing inspiration from platforms like Airbnb. It serves as a robust platform for property management where users can discover, create, modify, and remove listings, in addition to sharing their experiences through reviews.
+WanderLust is a full-stack web application project created to demonstrate web development skills. Inspired by Airbnb, this fictional platform allows users to browse, create, update, and delete listings for vacation homes, as well as add reviews. It serves as a portfolio project showcasing the implementation of CRUD operations, RESTful APIs, and MVC architecture.
 
 ## 🚀 Features
 
@@ -86,7 +86,7 @@ WanderLust/
 3.  **Database Setup:**
     Ensure your local MongoDB instance is running.
     
-    *(Optional) Seed the database with sample data:*
+    *Seed the database with sample data:*
     ```bash
     node init/index.js
     ```
