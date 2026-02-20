@@ -50,7 +50,14 @@ router.get(
     "/:id",
     wrapAsync(async (req, res) => {
         let { id } = req.params;
-        const listing = await Listing.findById(id).populate("reviews");
+        const listing = await Listing.findById(id)
+            .populate("reviews")
+            .catch(() => null);
+        if(!listing) {
+            req.flash("error", "Listing you requested does not exist");
+            res.redirect("/listings");
+            return;
+        }
         res.render("listings/show.ejs", { listing });
     }),
 );
@@ -60,7 +67,12 @@ router.get(
     "/:id/edit",
     wrapAsync(async (req, res) => {
         let { id } = req.params;
-        const listing = await Listing.findById(id);
+        const listing = await Listing.findById(id).catch(() => null);
+        if(!listing) {
+            req.flash("error", "Listing you requested does not exist");
+            res.redirect("/listings");
+            return;
+        }
         res.render("listings/edit.ejs", { listing });
     }),
 );
@@ -71,6 +83,9 @@ router.patch(
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+
+        req.flash("success", "Listing updated");
+
         res.redirect(`/listings/${id}`);
     }),
 );
