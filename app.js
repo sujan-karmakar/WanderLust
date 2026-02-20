@@ -5,6 +5,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 
 const listingRoutes = require("./routes/listing.js");
@@ -19,7 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
-
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -39,10 +40,25 @@ app.listen(port, () => {
     console.log(`Listening to port ${port}`);
 });
 
+
+const sessionOptions = {
+    secret: "mysecretcode",
+    resave: false,
+    saveUninitialized: true
+};
+
 app.get("/", (req, res) => {
     res.send("Hi");
 });
 
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+app.use((req, res, next) => {
+    res.locals.success = req.flash("success");
+    next();
+});
 
 //Routes
 app.use("/listings", listingRoutes);
