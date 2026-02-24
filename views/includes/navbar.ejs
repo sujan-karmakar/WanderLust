@@ -19,7 +19,12 @@
                 <a class="nav-link" href="/listings/new">Add New Listing</a>
             </div>
 
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto align-items-center">
+                <button id="darkModeToggle" class="ms-2" type="button" aria-pressed="false" autocomplete="off">
+                    <span class="toggle-slider"></span>
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <% if(!currentUser) { %>
                     <a class="nav-link active" href="/signup">SignUp</a>
                     <a class="nav-link" href="/login">Login</a>

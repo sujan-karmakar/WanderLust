@@ -111,3 +111,182 @@ body {
     padding-left: 0;
     padding-right: 0;
 }
+
+/* --- Enhanced Modern Styles --- */
+
+.card {
+    background: #fff;
+    border-radius: 1.2rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: none !important;
+}
+
+.listing-card {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.06);
+    border-radius: 1.2rem !important;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.listing-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 3px 8px rgba(0,0,0,0.09);
+}
+
+.card-img-top {
+    border-radius: 1rem 1rem 0 0 !important;
+    min-height: 220px;
+    max-height: 260px;
+    background: #f3f3f3;
+}
+
+.show-image {
+    height: 38vh;
+    min-height: 260px;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 1.2rem 1.2rem 0 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.add-btn, .edit-btn{
+    background-color: #fe424d !important;
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.08);
+    transition: background 0.18s, box-shadow 0.18s;
+}
+.add-btn:hover, .edit-btn:hover {
+    background-color: #e63b44 !important;
+    box-shadow: 0 4px 16px rgba(254,66,77,0.13);
+}
+
+.card-body {
+    padding: 1.2rem !important;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #fe424d;
+}
+
+.review-section {
+    background: #f7f7fa;
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.review-section .card {
+    border-radius: 0.8rem !important;
+    margin-bottom: 1.2rem;
+}
+.review-section .btn-dark {
+    border-radius: 0.5rem;
+    padding: 0.2rem 1.1rem;
+}
+
+.form-control, .form-range {
+    border-radius: 0.6rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: none;
+    transition: border 0.18s;
+}
+.form-control:focus, .form-range:focus {
+    border: 1.5px solid #fe424d;
+    box-shadow: 0 0 0 0.1rem rgba(254,66,77,0.08);
+}
+
+/* --- Enhanced rating range style --- */
+.form-range {
+    accent-color: #fe424d;
+    height: 0.5rem;
+    background: #e0e0e0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+.form-range::-webkit-slider-thumb {
+    background: #fe424d;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.13);
+    border: 2px solid #fff;
+    transition: background 0.18s;
+    margin-top: -0.4rem; /* Center thumb on track */
+}
+.form-range:focus::-webkit-slider-thumb {
+    background: #e63b44;
+}
+.form-range::-moz-range-thumb {
+    background: #fe424d;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.13);
+    border: 2px solid #fff;
+    transition: background 0.18s;
+}
+.form-range:focus::-moz-range-thumb {
+    background: #e63b44;
+}
+.form-range::-ms-thumb {
+    background: #fe424d;
+    border-radius: 50%;
+    width: 1.3rem;
+    height: 1.3rem;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.13);
+    border: 2px solid #fff;
+    transition: background 0.18s;
+}
+.form-range:focus::-ms-thumb {
+    background: #e63b44;
+}
+.form-range::-ms-fill-lower {
+    background: #fe424d;
+}
+.form-range::-ms-fill-upper {
+    background: #e0e0e0;
+}
+.form-range::-ms-tooltip {
+    display: none;
+}
+.form-range {
+    /* Remove default appearance for better alignment */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* --- Further enhanced rating slider style --- */
+.rating-label {
+    font-weight: 500;
+    color: #fe424d;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+}
+.rating-range-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.rating-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fe424d;
+    min-width: 2.2rem;
+    text-align: center;
+    background: #fff4f5;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid #ffd6d9;
+    box-shadow: 0 1px 4px rgba(254,66,77,0.07);
+}
