@@ -1,36 +1,46 @@
 const express = require("express");
-const router = express.Router({ mergeParams: true});
+const router = express.Router({ mergeParams: true });
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
 const Review = require("../models/review.js");
-const { validateReview, isLoggedIn} = require("../middleware.js");
-
+const { validateReview, isReviewAuthor, isLoggedIn } = require("../middleware.js");
 
 //Post review route
-router.post("/", validateReview, wrapAsync(async (req, res) => {
-    let listing = await Listing.findById(req.params.id);
-    let newReview = new Review(req.body.review);
+router.post(
+    "/",
+    isLoggedIn,
+    validateReview,
+    wrapAsync(async (req, res) => {
+        let listing = await Listing.findById(req.params.id);
+        let newReview = new Review(req.body.review);
+        newReview.author = req.user._id;
 
-    listing.reviews.push(newReview);
+        listing.reviews.push(newReview);
 
-    await newReview.save();
-    await listing.save();
+        await newReview.save();
+        await listing.save();
 
-    req.flash("success", "New review created");
+        req.flash("success", "New review created");
 
-    res.redirect(`/listings/${listing._id}`);
-}));
+        res.redirect(`/listings/${listing._id}`);
+    }),
+);
 
 //Delete review route
-router.delete("/:reviewId", wrapAsync(async(req, res) => {
-    let {id, reviewId} = req.params;
+router.delete(
+    "/:reviewId",
+    isLoggedIn,
+    isReviewAuthor,
+    wrapAsync(async (req, res) => {
+        let { id, reviewId } = req.params;
 
-    await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
-    await Review.findByIdAndDelete(reviewId);
+        await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+        await Review.findByIdAndDelete(reviewId);
 
-    req.flash("success", "Review deleted");
+        req.flash("success", "Review deleted");
 
-    res.redirect(`/listings/${id}`);
-}));
+        res.redirect(`/listings/${id}`);
+    }),
+);
 
 module.exports = router;

@@ -1,13 +1,8 @@
 const express = require("express");
-const router = express.Router({ mergeParams: true});
+const router = express.Router({ mergeParams: true });
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
 const { validateListing, isLoggedIn, isOwner } = require("../middleware.js");
-
-
-
-
-
 
 //Index route
 router.get(
@@ -25,7 +20,7 @@ router.get("/new", isLoggedIn, (req, res) => {
 
 //Create route
 router.post(
-    "/", 
+    "/",
     isLoggedIn,
     validateListing,
     wrapAsync(async (req, res) => {
@@ -43,9 +38,15 @@ router.get(
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         const listing = await Listing.findById(id)
-            .populate("reviews").populate("owner")
+            .populate({
+                path: "reviews",
+                populate: {
+                    path: "author",
+                },
+            })
+            .populate("owner")
             .catch(() => null);
-        if(!listing) {
+        if (!listing) {
             req.flash("error", "Listing you requested does not exist");
             res.redirect("/listings");
             return;
@@ -56,11 +57,13 @@ router.get(
 
 //Edit route
 router.get(
-    "/:id/edit", isLoggedIn, isOwner,
+    "/:id/edit",
+    isLoggedIn,
+    isOwner,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         const listing = await Listing.findById(id).catch(() => null);
-        if(!listing) {
+        if (!listing) {
             req.flash("error", "Listing you requested does not exist");
             res.redirect("/listings");
             return;
@@ -71,7 +74,7 @@ router.get(
 
 //Update route
 router.patch(
-    "/:id", 
+    "/:id",
     isLoggedIn,
     isOwner,
     validateListing,
