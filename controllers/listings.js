@@ -36,13 +36,14 @@ module.exports.createListing = async (req, res) => {
     const query = newListing.location;
     let response = await fetch(`https://api.maptiler.com/geocoding/${query}.json?key=${mapToken}&limit=1`);
     const data = await response.json();
-    const coordinates = data.features[0].coordinates;
+    const coordinates = data.features[0].geometry;
     
 
     let url = req.file.path;
     let filename = req.file.filename;
     newListing.owner = req.user._id;
     newListing.image = { url, filename};
+    newListing.geometry = coordinates;
     await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
