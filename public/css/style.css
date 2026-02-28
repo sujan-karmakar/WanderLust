@@ -205,4 +205,8 @@ body {
 }
 
 
-/* REMOVED RATING STYLES */
+/* Map */
+#map {
+    height: 50vh;
+    width: 55vw;
+}
