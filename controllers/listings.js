@@ -29,9 +29,18 @@ module.exports.showListing = async (req, res) => {
 };
 
 module.exports.createListing = async (req, res) => {
+    const newListing = new Listing(req.body.listing);
+
+
+    const mapToken = process.env.MAP_API;
+    const query = newListing.location;
+    let response = await fetch(`https://api.maptiler.com/geocoding/${query}.json?key=${mapToken}&limit=1`);
+    const data = await response.json();
+    const coordinates = data.features[0].coordinates;
+    
+
     let url = req.file.path;
     let filename = req.file.filename;
-    const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
     newListing.image = { url, filename};
     await newListing.save();

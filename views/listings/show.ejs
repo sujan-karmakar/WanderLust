@@ -1,4 +1,10 @@
 <% layout("/layouts/boilerplate.ejs") -%>
+
+<script>
+  const mapToken = "<%= process.env.MAP_API %>";
+</script>
+
+
 <div class="row mt-3">
   <div class="col-8 offset-2">
     <h3><%= listing.title %></h3>
@@ -97,15 +103,4 @@
   <div id="map" style="border-radius: 2rem;;"></div>
 </div>
 
-<script>
-  let mapToken = "<%= process.env.MAP_API %>";
-  console.log(mapToken);
-  maptilersdk.config.apiKey = mapToken;
-  const map = new maptilersdk.Map({
-    container: 'map', // container's id or the HTML element in which the SDK will render the map
-    style: maptilersdk.MapStyle.STREETS,
-    center: [88.36, 22.57], // starting position [lng, lat]
-    zoom: 14 // starting zoom
-  });
-</script>
-
+<script src="/js/map.js"></script>
