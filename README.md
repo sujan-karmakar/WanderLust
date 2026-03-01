@@ -1,49 +1,52 @@
+
 # WanderLust
 
 WanderLust is a full-stack web application project created to demonstrate web development skills. Inspired by Airbnb, this fictional platform allows users to browse, create, update, and delete listings for vacation homes, as well as add reviews. It serves as a portfolio project showcasing the implementation of CRUD operations, RESTful APIs, and MVC architecture.
 
-## 🚀 Features
+## Key Features
 
-### **Listings Management**
-- **Browse:** Explore a diverse collection of vacation rentals.
-- **Create:** Publish new properties with comprehensive details including title, description, images, pricing, location, and country.
-- **Update:** modify listing information to keep it current.
-- **Delete:** Remove listings when they are no longer available. Deleting a listing cascadingly removes all associated reviews.
+- **Comprehensive Listings:** Users can explore, create, edit, and delete vacation rental listings, each with detailed descriptions, images, pricing, and geolocation data.
+- **Interactive Reviews:** Guests can leave ratings and feedback on listings, helping others make informed decisions.
+- **User Authentication:** Secure signup and login functionality to protect user data and personalize experiences.
+- **Responsive Design:** Fully optimized for desktop and mobile devices, ensuring accessibility anywhere.
+- **Robust Validation & Error Handling:** All user input is validated and errors are managed gracefully for a smooth experience.
+- **GeoJSON Support:** Listing locations are stored using a geometry key, compatible with mapping and geospatial features.
 
-### **Review System**
-- **Add Reviews:** Rate properties and leave detailed feedback.
-- **Delete Reviews:** Remove feedback if necessary.
+## Technology Stack
 
-### **Technical Highlights**
-- **MVC Architecture:** Structured using the Model-View-Controller pattern for maintainability and scalability.
-- **RESTful API:** Clean and standard RESTful routes for all resource interactions.
-- **Database Relationships:** Implements complex One-to-Many relationships between Listings and Reviews using MongoDB.
-- **Data Validation:** Robust server-side validation using **Joi** ensures data integrity before it reaches the database.
-- **Error Handling:** Centralized error handling with custom `ExpressError` classes and async wrappers for stability.
-- **Responsive UI:** Built with **Bootstrap 5** for a seamless experience across desktop and mobile devices.
+- **Frontend:** EJS templating, Bootstrap 5, HTML5, CSS3, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB with Mongoose ODM
+- **Other:** Joi for validation, custom error handling utilities
 
-## 🛠️ Tech Stack
+## Getting Started
 
-- **Frontend:**
-  - HTML5, CSS3, JavaScript
-  - [EJS (Embedded JavaScript)](https://ejs.co/) templating engine
-  - [Bootstrap 5](https://getbootstrap.com/) framework
-  - FontAwesome for iconography
+1. **Install Node.js and MongoDB** on your system.
+2. **Clone the repository** and install dependencies with `npm install`.
+3. **Seed the database** with sample data for instant exploration.
+4. **Start the application** and visit `http://localhost:8080` in your browser.
 
-- **Backend:**
-  - [Node.js](https://nodejs.org/) runtime environment
-  - [Express.js](https://expressjs.com/) framework
+## Folder Structure
 
-- **Database:**
-  - [MongoDB](https://www.mongodb.com/) NoSQL database
-  - [Mongoose](https://mongoosejs.com/) ODM for schema modeling
+- `init/` – Database seeding scripts and sample data
+- `models/` – Mongoose schemas for listings, reviews, and users
+- `public/` – Static assets (CSS, JS, images)
+- `routes/` – Express route handlers for all resources
+- `views/` – EJS templates for all pages and components
+- `utils/` – Utility modules for error handling and async operations
+- `app.js` – Main application entry point
+
+
+## License
+
+This project is for educational and demonstration purposes only.
 
 ## 📂 Project Structure
 
 ```
 WanderLust/
 ├── init/               # Database initialization scripts
-│   ├── data.js         # Sample listing data for seeding
+│   ├── data.js         # Sample listing data for seeding (uses geometry key for location)
 │   └── index.js        # Script to seed the database
 ├── models/             # Mongoose schemas
 │   ├── listing.js      # Listing model definition
