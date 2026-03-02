@@ -4,94 +4,117 @@
         <button>Create New Listing</button>
     </form> -->
 
-    <style>
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .filter {
-            text-align: center;
-            margin-right: 2rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-        }
-
-        .filter:hover {
-            cursor: pointer;
-            opacity: 1;
-        }
-
-        .filter p {
-            font-size: 0.8rem;
-        }
-
-        .tax-info {
-            display: none;
-        }
-    </style>
-
-
-    <button class="btn btn-dark btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Show all filters
+    
+    <button class="navbar-toggler d-lg-none mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="btn btn-dark">Show all filters</span>
     </button>
 
-<div class="collapse" id="collapseExample">
-    <div id="filters">
+    
+    <div class="collapse d-lg-none navbar-collapse" id="navbarNav">
+        <div id="filters">
+
+        
         <div class="filter">
             <div><i class="fa-solid fa-fire"></i></div>
             <p>Trending</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-bed"></i></div>
             <p>Rooms</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-city"></i></div>
             <p>Iconic Cities</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-mountain"></i></div>
             <p>Mountains</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-campground"></i></div>
             <p>Camping</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-brands fa-fort-awesome"></i></div>
             <p>Castles</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-person-swimming"></i></div>
             <p>Amazing Pools</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-tractor"></i></div>
             <p>Farms</p>
         </div>
-
         <div class="filter">
             <div><i class="fa-solid fa-snowflake"></i></div>
             <p>Arctic</p>
         </div>
-
-        <div class="toggle">
+        <div class="filter">
+            <div><i class="fa-solid fa-water"></i></div>
+            <p>Beach</p>
+        </div>
+        <div class="tax-toggle">
             <div class="form-check-reverse form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
               <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
             </div>
         </div>
-
+        <!-- ...end filter content... -->
+        </div>
     </div>
-</div>
+
+    <!-- Filters always visible on large screens -->
+    <div class="d-none d-lg-block">
+        <div id="filters">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-city"></i></div>
+                <p>Iconic Cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>Farms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-snowflake"></i></div>
+                <p>Arctic</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-water"></i></div>
+                <p>Beach</p>
+            </div>
+            <div class="tax-toggle">
+                <div class="form-check-reverse form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefaultLg">
+                  <label class="form-check-label" for="switchCheckDefaultLg">Display total after taxes</label>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
@@ -115,16 +138,3 @@
     </div>
 
 
-    <script>
-        let taxSwitch = document.getElementById("switchCheckDefault");
-        taxSwitch.addEventListener("click", () => {
-            let taxInfos = document.getElementsByClassName("tax-info");
-            for(taxInfo of taxInfos) {
-                if(taxInfo.style.display != "inline") {
-                    taxInfo.style.display = "inline";
-                } else {
-                    taxInfo.style.display = "none";
-                }   
-            }
-        });
-    </script>

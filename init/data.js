@@ -40,7 +40,7 @@ const sampleListings = [
         location: "Aspen",
         country: "United States",
         geometry: { type: 'Point', coordinates: [-106.8175, 39.1911] },
-        categories: ["Mountains", "Camping", "Farms"],
+        categories: ["Trending", "Beach"],
     },
     {
         title: "Historic Villa in Tuscany",
@@ -68,7 +68,7 @@ const sampleListings = [
         location: "Portland",
         country: "United States",
         geometry: { type: 'Point', coordinates: [-122.6765, 45.5231] },
-        categories: ["Camping", "Farms"],
+                categories: ["Amazing Pools", "Trending", "Rooms", "Beach"],
     },
     {
         title: "Beachfront Paradise",
@@ -96,7 +96,7 @@ const sampleListings = [
         location: "Lake Tahoe",
         country: "United States",
         geometry: { type: 'Point', coordinates: [-120.0433, 39.0968] },
-        categories: ["Mountains", "Camping"],
+                categories: ["Iconic Cities", "Trending", "Rooms", "Beach"],
     },
     {
         title: "Luxury Penthouse with City Views",
@@ -110,7 +110,7 @@ const sampleListings = [
         location: "Los Angeles",
         country: "United States",
         geometry: { type: 'Point', coordinates: [-118.2437, 34.0522] },
-        categories: ["Iconic Cities", "Trending", "Rooms"],
+                categories: ["Amazing Pools", "Trending", "Rooms", "Iconic Cities", "Castles", "Beach"],
     },
     {
         title: "Ski-In/Ski-Out Chalet",
@@ -124,7 +124,7 @@ const sampleListings = [
         location: "Verbier",
         country: "Switzerland",
         geometry: { type: 'Point', coordinates: [7.2336, 46.0961] },
-        categories: ["Mountains", "Arctic"],
+                categories: ["Arctic", "Mountains", "Camping", "Beach"],
     },
     {
         title: "Safari Lodge in the Serengeti",
