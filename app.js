@@ -60,10 +60,6 @@ const sessionOptions = {
     }
 };
 
-app.get("/", (req, res) => {
-    res.send("Hi");
-});
-
 
 app.use(session(sessionOptions));
 app.use(flash());
