@@ -5,19 +5,22 @@ WanderLust is a full-stack web application project created to demonstrate web de
 
 ## Key Features
 
-- **Comprehensive Listings:** Users can explore, create, edit, and delete vacation rental listings, each with detailed descriptions, images, pricing, and geolocation data.
+- **Comprehensive Listings:** Users can explore, create, edit, and delete vacation rental listings, each with detailed descriptions, images, pricing, and geolocation data. Listings support multiple categories for better organization.
 - **Interactive Reviews:** Guests can leave ratings and feedback on listings, helping others make informed decisions.
+- **Advanced Search & Filtering:** Search listings by title or location, filter by country, and browse by categories such as Trending, Rooms, Mountains, and more.
 - **User Authentication:** Secure signup and login functionality to protect user data and personalize experiences.
-- **Responsive Design:** Fully optimized for desktop and mobile devices, ensuring accessibility anywhere.
+- **Responsive Design with Dark Mode:** Fully optimized for desktop and mobile devices, with a toggle for dark mode to enhance user experience.
+- **Interactive Maps:** Integrated MapTiler maps display listing locations with markers and popups.
+- **Dynamic Pricing:** Toggle between base prices and prices including taxes for transparent cost display.
 - **Robust Validation & Error Handling:** All user input is validated and errors are managed gracefully for a smooth experience.
 - **GeoJSON Support:** Listing locations are stored using a geometry key, compatible with mapping and geospatial features.
 
 ## Technology Stack
 
-- **Frontend:** EJS templating, Bootstrap 5, HTML5, CSS3, JavaScript
-- **Backend:** Node.js, Express.js
+- **Frontend:** EJS templating, Bootstrap 5, HTML5, CSS3, JavaScript, MapTiler SDK for maps
+- **Backend:** Node.js, Express.js, Passport.js for authentication
 - **Database:** MongoDB with Mongoose ODM
-- **Other:** Joi for validation, custom error handling utilities
+- **Other:** Joi for validation, Multer for file uploads, custom error handling utilities
 
 ## Getting Started
 
