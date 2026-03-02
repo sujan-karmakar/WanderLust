@@ -31,12 +31,10 @@ const listingSchema = new Schema({
             enum: ["Point"], // 'location.type' must be 'Point'
             required: true,
         },
-        coordinates: [
-            {
-                type: [Number],
-                required: true,
-            },
-        ],
+        coordinates: {
+            type: [Number],
+            required: true,
+        },
     },
     categories: [
         {

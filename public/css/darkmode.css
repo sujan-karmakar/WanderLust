@@ -1,3 +1,136 @@
+.navbar .select-wrapper {
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.navbar .select-wrapper .form-select {
+    border-radius: 2rem !important;
+}
+.dark-mode .navbar .select-wrapper {
+    position: relative;
+}
+.dark-mode .navbar .select-wrapper::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 1.2rem;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat center center;
+    background-size: 16px 16px;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: block;
+}
+.dark-mode .navbar .form-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-color: #232526 !important;
+    color: #ffd700 !important;
+    border: 1px solid #444;
+    background-image: none !important;
+    padding-right: 2.5rem;
+}
+.dark-mode .navbar .form-select::-ms-expand {
+    display: none;
+}
+.dark-mode .navbar .form-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    position: relative;
+    z-index: 1;
+    background-color: #232526 !important;
+    color: #ffd700 !important;
+    border: 1px solid #444;
+    background-image: none !important;
+}
+
+.dark-mode .navbar .form-select:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 1.2rem;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat center center;
+    background-size: 16px 16px;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: block;
+}
+
+/* Remove default arrow for IE/Edge */
+.dark-mode .navbar .form-select::-ms-expand {
+    display: none;
+}
+.dark-mode .navbar .form-control::placeholder,
+.dark-mode .navbar .search-input::placeholder {
+    color: #ffd700 !important;
+    opacity: 1;
+}
+.dark-mode .navbar .form-select {
+    position: relative;
+    z-index: 1;
+}
+
+.dark-mode .navbar .form-select::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 1.2rem;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat center center;
+    background-size: 16px 16px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+/* Hide default arrow for Chrome, Safari, Edge, Opera */
+.dark-mode .navbar .form-select::-webkit-appearance {
+    appearance: none;
+    -webkit-appearance: none;
+}
+.dark-mode .navbar .form-select::-ms-expand {
+    display: none;
+}
+.dark-mode .navbar .form-select {
+    /* ...existing styles... */
+    /* Make dropdown arrow white for all browsers */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 16px;
+}
+
+/* Remove default arrow in IE/Edge */
+.dark-mode .navbar .form-select::-ms-expand {
+    display: none;
+}
+
+/* Custom arrow for Chrome, Safari, Edge, Opera */
+.dark-mode .navbar .form-select::-webkit-input-placeholder { color: #ffd700; }
+.dark-mode .navbar .form-select::-webkit-select-placeholder { color: #ffd700; }
+.dark-mode .navbar .form-select::-webkit-scrollbar { background: #232526; }
+
+/* Custom arrow for Firefox */
+.dark-mode .navbar .form-select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #ffd700;
+}
+.dark-mode .navbar .form-select {
+    /* ...existing styles... */
+    /* Make dropdown arrow white for all browsers */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 16px;
+}
 /* darkmode.css - Styles for dark mode */
 
 body.dark-mode {
@@ -11,9 +144,32 @@ body.dark-mode {
     border-bottom: 1px solid #444;
 }
 
+
 .dark-mode .navbar .nav-link,
-.dark-mode .navbar .fa-airbnb {
-    color: #f3f3f3 !important;
+.dark-mode .navbar .fa-airbnb,
+.dark-mode .navbar .navbar-brand {
+    color: #ffd700 !important;
+}
+
+.dark-mode .navbar .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.dark-mode .navbar .navbar-brand .fa-airbnb {
+    color: #fe424d !important;
+}
+
+.dark-mode .navbar .form-select {
+    background: #232526 !important;
+    color: #ffd700 !important;
+    border: 1px solid #444;
+}
+.dark-mode .navbar .form-select:focus {
+    background: #232526 !important;
+    color: #ffd700 !important;
+    border: 1.5px solid #ffd700;
+    box-shadow: 0 0 0 0.1rem rgba(254, 66, 77, 0.08);
 }
 
 .dark-mode .navbar .fa-sun,
