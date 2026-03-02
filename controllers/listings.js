@@ -1,7 +1,7 @@
 const Listing = require("../models/listing.js");
 
 module.exports.index = async (req, res) => {
-    const { q, country } = req.query;
+    const { q, country, category } = req.query;
     let filter = {};
     if (q) {
         filter.$or = [
@@ -12,8 +12,11 @@ module.exports.index = async (req, res) => {
     if (country) {
         filter.country = country;
     }
+    if (category) {
+        filter.categories = { $in: [category] };
+    }
     const allListings = await Listing.find(filter);
-    res.render("listings/index.ejs", { allListings, q, country });
+    res.render("listings/index.ejs", { allListings, q, country, category });
 };
 
 module.exports.renderNewForm = (req, res) => {
