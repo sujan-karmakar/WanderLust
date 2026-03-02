@@ -26,6 +26,31 @@ body {
     color: #222222 !important;
 }
 
+.search-btn {
+    background-color: #fe424d;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.search-btn i {
+    display: inline;
+}
+
+.search-btn:hover{
+    background-color: #fe424d;
+    color: white;
+}
+
+
+.search-input {
+    border-radius: 25px !important;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+}
+
+
+
 /* FOOTER */
 .f-info-links a {
     text-decoration: none;
