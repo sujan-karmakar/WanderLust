@@ -16,67 +16,67 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto mt-2">
-                <form class="d-flex align-items-center" role="search" method="GET" action="/listings">
-                    <input class="form-control me-2 search-input" type="search" name="q" placeholder="Search destinations" value="<%= typeof q !== 'undefined' ? q : '' %>"/>
-                    <div class="select-wrapper me-2" style="min-width: 280px; position: relative;">
+                <form class="d-flex flex-column flex-md-row gap-3 align-items-center" role="search" method="GET" action="/listings">
+                    <input class="form-control search-input" type="search" name="q" placeholder="Search destinations" value="<%= typeof q !== 'undefined' ? q : '' %>"/>
+                    <div class="select-wrapper country-filter" style="position: relative;">
                         <select class="form-select" name="country" style="width: 100%;">
                         <option value="">All Countries</option>
-                        <option value="France" <%= country === 'France' ? 'selected' : '' %>>France</option>
-                        <option value="Spain" <%= country === 'Spain' ? 'selected' : '' %>>Spain</option>
-                        <option value="United States" <%= country === 'United States' ? 'selected' : '' %>>United States</option>
-                        <option value="China" <%= country === 'China' ? 'selected' : '' %>>China</option>
-                        <option value="Italy" <%= country === 'Italy' ? 'selected' : '' %>>Italy</option>
-                        <option value="Turkey" <%= country === 'Turkey' ? 'selected' : '' %>>Turkey</option>
-                        <option value="Mexico" <%= country === 'Mexico' ? 'selected' : '' %>>Mexico</option>
-                        <option value="Thailand" <%= country === 'Thailand' ? 'selected' : '' %>>Thailand</option>
-                        <option value="Germany" <%= country === 'Germany' ? 'selected' : '' %>>Germany</option>
-                        <option value="United Kingdom" <%= country === 'United Kingdom' ? 'selected' : '' %>>United Kingdom</option>
-                        <option value="Japan" <%= country === 'Japan' ? 'selected' : '' %>>Japan</option>
-                        <option value="Austria" <%= country === 'Austria' ? 'selected' : '' %>>Austria</option>
-                        <option value="Greece" <%= country === 'Greece' ? 'selected' : '' %>>Greece</option>
-                        <option value="Malaysia" <%= country === 'Malaysia' ? 'selected' : '' %>>Malaysia</option>
-                        <option value="Australia" <%= country === 'Australia' ? 'selected' : '' %>>Australia</option>
-                        <option value="Singapore" <%= country === 'Singapore' ? 'selected' : '' %>>Singapore</option>
-                        <option value="Canada" <%= country === 'Canada' ? 'selected' : '' %>>Canada</option>
-                        <option value="Korea, South" <%= country === 'Korea, South' ? 'selected' : '' %>>South Korea</option>
-                        <option value="Russia" <%= country === 'Russia' ? 'selected' : '' %>>Russia</option>
-                        <option value="Netherlands" <%= country === 'Netherlands' ? 'selected' : '' %>>Netherlands</option>
-                        <option value="India" <%= country === 'India' ? 'selected' : '' %>>India</option>
-                        <option value="Brazil" <%= country === 'Brazil' ? 'selected' : '' %>>Brazil</option>
-                        <option value="Switzerland" <%= country === 'Switzerland' ? 'selected' : '' %>>Switzerland</option>
                         <option value="Argentina" <%= country === 'Argentina' ? 'selected' : '' %>>Argentina</option>
+                        <option value="Australia" <%= country === 'Australia' ? 'selected' : '' %>>Australia</option>
+                        <option value="Austria" <%= country === 'Austria' ? 'selected' : '' %>>Austria</option>
+                        <option value="Belgium" <%= country === 'Belgium' ? 'selected' : '' %>>Belgium</option>
+                        <option value="Brazil" <%= country === 'Brazil' ? 'selected' : '' %>>Brazil</option>
+                        <option value="Canada" <%= country === 'Canada' ? 'selected' : '' %>>Canada</option>
+                        <option value="Chile" <%= country === 'Chile' ? 'selected' : '' %>>Chile</option>
+                        <option value="China" <%= country === 'China' ? 'selected' : '' %>>China</option>
+                        <option value="Colombia" <%= country === 'Colombia' ? 'selected' : '' %>>Colombia</option>
+                        <option value="Costa Rica" <%= country === 'Costa Rica' ? 'selected' : '' %>>Costa Rica</option>
+                        <option value="Croatia" <%= country === 'Croatia' ? 'selected' : '' %>>Croatia</option>
+                        <option value="Czech Republic" <%= country === 'Czech Republic' ? 'selected' : '' %>>Czech Republic</option>
+                        <option value="Denmark" <%= country === 'Denmark' ? 'selected' : '' %>>Denmark</option>
+                        <option value="Dominican Republic" <%= country === 'Dominican Republic' ? 'selected' : '' %>>Dominican Republic</option>
                         <option value="Egypt" <%= country === 'Egypt' ? 'selected' : '' %>>Egypt</option>
+                        <option value="Finland" <%= country === 'Finland' ? 'selected' : '' %>>Finland</option>
+                        <option value="France" <%= country === 'France' ? 'selected' : '' %>>France</option>
+                        <option value="Germany" <%= country === 'Germany' ? 'selected' : '' %>>Germany</option>
+                        <option value="Greece" <%= country === 'Greece' ? 'selected' : '' %>>Greece</option>
+                        <option value="Hungary" <%= country === 'Hungary' ? 'selected' : '' %>>Hungary</option>
+                        <option value="Iceland" <%= country === 'Iceland' ? 'selected' : '' %>>Iceland</option>
+                        <option value="India" <%= country === 'India' ? 'selected' : '' %>>India</option>
                         <option value="Indonesia" <%= country === 'Indonesia' ? 'selected' : '' %>>Indonesia</option>
                         <option value="Ireland" <%= country === 'Ireland' ? 'selected' : '' %>>Ireland</option>
-                        <option value="Philippines" <%= country === 'Philippines' ? 'selected' : '' %>>Philippines</option>
-                        <option value="Vietnam" <%= country === 'Vietnam' ? 'selected' : '' %>>Vietnam</option>
-                        <option value="Portugal" <%= country === 'Portugal' ? 'selected' : '' %>>Portugal</option>
+                        <option value="Italy" <%= country === 'Italy' ? 'selected' : '' %>>Italy</option>
+                        <option value="Japan" <%= country === 'Japan' ? 'selected' : '' %>>Japan</option>
+                        <option value="Malaysia" <%= country === 'Malaysia' ? 'selected' : '' %>>Malaysia</option>
+                        <option value="Mexico" <%= country === 'Mexico' ? 'selected' : '' %>>Mexico</option>
                         <option value="Morocco" <%= country === 'Morocco' ? 'selected' : '' %>>Morocco</option>
-                        <option value="Colombia" <%= country === 'Colombia' ? 'selected' : '' %>>Colombia</option>
-                        <option value="South Africa" <%= country === 'South Africa' ? 'selected' : '' %>>South Africa</option>
+                        <option value="Netherlands" <%= country === 'Netherlands' ? 'selected' : '' %>>Netherlands</option>
                         <option value="New Zealand" <%= country === 'New Zealand' ? 'selected' : '' %>>New Zealand</option>
-                        <option value="Peru" <%= country === 'Peru' ? 'selected' : '' %>>Peru</option>
-                        <option value="Chile" <%= country === 'Chile' ? 'selected' : '' %>>Chile</option>
-                        <option value="Poland" <%= country === 'Poland' ? 'selected' : '' %>>Poland</option>
-                        <option value="Denmark" <%= country === 'Denmark' ? 'selected' : '' %>>Denmark</option>
-                        <option value="Czech Republic" <%= country === 'Czech Republic' ? 'selected' : '' %>>Czech Republic</option>
-                        <option value="Hungary" <%= country === 'Hungary' ? 'selected' : '' %>>Hungary</option>
-                        <option value="Belgium" <%= country === 'Belgium' ? 'selected' : '' %>>Belgium</option>
                         <option value="Norway" <%= country === 'Norway' ? 'selected' : '' %>>Norway</option>
-                        <option value="Sweden" <%= country === 'Sweden' ? 'selected' : '' %>>Sweden</option>
-                        <option value="Finland" <%= country === 'Finland' ? 'selected' : '' %>>Finland</option>
-                        <option value="Iceland" <%= country === 'Iceland' ? 'selected' : '' %>>Iceland</option>
-                        <option value="Croatia" <%= country === 'Croatia' ? 'selected' : '' %>>Croatia</option>
-                        <option value="Costa Rica" <%= country === 'Costa Rica' ? 'selected' : '' %>>Costa Rica</option>
                         <option value="Panama" <%= country === 'Panama' ? 'selected' : '' %>>Panama</option>
-                        <option value="Dominican Republic" <%= country === 'Dominican Republic' ? 'selected' : '' %>>Dominican Republic</option>
+                        <option value="Peru" <%= country === 'Peru' ? 'selected' : '' %>>Peru</option>
+                        <option value="Philippines" <%= country === 'Philippines' ? 'selected' : '' %>>Philippines</option>
+                        <option value="Poland" <%= country === 'Poland' ? 'selected' : '' %>>Poland</option>
+                        <option value="Portugal" <%= country === 'Portugal' ? 'selected' : '' %>>Portugal</option>
+                        <option value="Russia" <%= country === 'Russia' ? 'selected' : '' %>>Russia</option>
+                        <option value="Singapore" <%= country === 'Singapore' ? 'selected' : '' %>>Singapore</option>
+                        <option value="South Africa" <%= country === 'South Africa' ? 'selected' : '' %>>South Africa</option>
+                        <option value="Korea, South" <%= country === 'Korea, South' ? 'selected' : '' %>>South Korea</option>
+                        <option value="Spain" <%= country === 'Spain' ? 'selected' : '' %>>Spain</option>
+                        <option value="Sweden" <%= country === 'Sweden' ? 'selected' : '' %>>Sweden</option>
+                        <option value="Switzerland" <%= country === 'Switzerland' ? 'selected' : '' %>>Switzerland</option>
+                        <option value="Thailand" <%= country === 'Thailand' ? 'selected' : '' %>>Thailand</option>
+                        <option value="Turkey" <%= country === 'Turkey' ? 'selected' : '' %>>Turkey</option>
+                        <option value="United Kingdom" <%= country === 'United Kingdom' ? 'selected' : '' %>>United Kingdom</option>
+                        <option value="United States" <%= country === 'United States' ? 'selected' : '' %>>United States</option>
+                        <option value="Vietnam" <%= country === 'Vietnam' ? 'selected' : '' %>>Vietnam</option>
                         </select>
                     </div>
                     <button class="btn search-btn d-flex align-items-center" type="submit">
                         <i class="fa-solid fa-magnifying-glass me-1"></i>
                         <span>Search</span>
                     </button>
-                </form>
+                </form> 
             </div>
 
 

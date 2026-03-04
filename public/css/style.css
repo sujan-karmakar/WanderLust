@@ -55,6 +55,17 @@ body {
     font-size: 1rem;
 }
 
+.country-filter {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .country-filter {
+        width: auto;
+        min-width: 280px;
+    }
+}
+
 
 
 /* FOOTER */

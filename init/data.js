@@ -1,5 +1,5 @@
 const sampleListings = [
-    // Categories: "Trending", "Rooms", "Iconic Cities", "Mountains", "Camping", "Castles", "Amazing Pools", "Farms", "Arctic"
+    
     {
         title: "Cozy Beachfront Cottage",
         description:
