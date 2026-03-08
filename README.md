@@ -111,3 +111,9 @@ WanderLust/
 
 5.  **Usage:**
     Open your browser and navigate to `http://localhost:8080/listings` to start exploring.
+
+### 👨‍💻 Author
+
+**Sujan Karmakar**
+- GitHub: [@sujan-karmakar](https://github.com/sujan-karmakar)
+- LinkedIn: [@sujan-karmakar](https://www.linkedin.com/in/sujan-karmakar/)
